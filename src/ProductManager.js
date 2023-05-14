@@ -12,14 +12,14 @@ class ProductManager {
 
   addProduct = ({ title, description, code, price, status, stock, category, thumbnails }) => {
     if (!title || !description || !code || !price || status === undefined || !stock || !category) {
-      console.error("Missing parameters")
+      console.error("Faltan parametros")
       return
     }
 
     const products = this.getProducts()
 
     if (products.find((product) => product.code === code)) {
-      console.error(`The product of code: "${code}" already exists`)
+      console.error(`EL producto con el codigo: "${code}"ya exixte`)
       return
     }
 
